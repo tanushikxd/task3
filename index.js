@@ -36,7 +36,8 @@ app.get("/tanushikxdt2012_gmail_com", (req, res) => {
 
     const result = lcm(a, b);
 
-    res.send(String(result));
+    res.type("text/plain");
+    res.send(String(result).trim());
 });
 
 app.listen(port, () => {
