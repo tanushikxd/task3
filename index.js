@@ -36,9 +36,12 @@ app.get("/tanushikxdt2012_gmail_com", (req, res) => {
 
     const result = lcm(a, b);
 
-    res.set("Content-Type", "text/plain");
-    res.send(String(result).trim());
+    res.status(200);
+    res.set("Content-Type", "text/plain; charset=utf-8");
+    res.end(String(result).trim());
 });
+
+    return res.status(200).type("text/plain").end("NaN");
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
